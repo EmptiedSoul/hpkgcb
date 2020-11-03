@@ -1,0 +1,50 @@
+--- hpkgcb - hpkg bindigs for C ---
+
+* aimed on performance C library that implements reading hpkg database and calling hardman/hpkg for package managing
+* going to be General Purpose {hardman,libhard,hpkg}-frontend library
+* going to be ported to Perl, Python, Ruby modules
+
+--- Build ---
+
+mkdir build && cd build
+cmake ../src/
+make
+
+--- Test ---
+
+* build test program
+make usage
+* run test program with args: -p<PACKAGE> -q<QUERY>
+e.g: ./usage -pcoreutils -qVersion
+
+--- API ---
+
+* bool isPackageInstalled(char* package, char* database)
+
+returns TRUE if package is installed
+returns FALSE otherwise
+
+* void getPackageInfo(char* package, char* field, char* database, char* result)
+
+puts info from desired field of desired package in result 
+
+* void getPackagesFromRepo(int offset, char* repo, char* package)
+
+puts line from offset from ROADMAP to package
+
+* int updateRoadmap()
+
+calls hardman update-roadmap
+return exit code
+
+Note:
+package - desired package
+database - path to hpkg package database (defined in DATABASE macro)
+field - desired field from .info file (e.g. "Package" "Version" "Depends" etc)
+repo - path to hardman repo ROADMAP (defined in REPO macro)
+
+
+Copyright (c) 2020, hardclanz (emptiedsoul)
+Considered Free Software (look COPYING)
+
+ 

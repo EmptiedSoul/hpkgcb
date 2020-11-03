@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.18.4)
+project(libhpkgcb)
+add_library(hpkgcb SHARED main.c)
+add_library(hpkgcb_static STATIC main.c)
+target_compile_options(hpkgcb PUBLIC -O3 -Wall -Wextra -Werror -pedantic -DNDEBUG)
+target_compile_options(hpkgcb_static PUBLIC -O3 -Wall -Wextra -Werror -pedantic -DNDEBUG)
+set_target_properties(hpkgcb_static PROPERTIES OUTPUT_NAME hpkgcb)

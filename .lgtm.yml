@@ -1,0 +1,8 @@
+extraction:
+  cpp:
+    configure:
+      command:
+        - ./configure
+    index:
+      build_command:
+        - ./build

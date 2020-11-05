@@ -36,4 +36,5 @@ set_target_properties(hpkgcb
 install(TARGETS hpkgcb hpkgcb_static
 	LIBRARY DESTINATION "lib"
 	PUBLIC_HEADER DESTINATION "include"
+	ARCHIVE DESTINATION "lib"
 	)

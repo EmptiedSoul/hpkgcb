@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18.4)
+cmake_minimum_required(VERSION 3.13.4)
 project(libhpkgcb)
 set(GCC_FLAGS -O3 -Wall -Wextra -Werror -pedantic -DNDEBUG)
 add_library(hpkgcb SHARED 
